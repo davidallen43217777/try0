@@ -1,0 +1,344 @@
+<!DOCTYPE html><html><head><title>title</title><script type='text/markdown'>
+
+
+
+<!------------------------------------------------------------------------------
+
+* file:///C://more/index/index.html
+
+--------------------------------------------------------------------------------
+
+<:>
+{
+  "%": "",
+  ".": "index.md!i.html",
+  "#": "#"
+}
+//
+__$$ = function({ ...vars }) {
+  const { } = vars;
+
+  __$$dd('i.html'); // ..
+
+  return { ...vars };
+};
+</:>
+
+------------------------------------------------------------------------------->
+
+
+
+</script><script type='text/markdown' data-name='_tmpl:index'>
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+<!------------------------------------------------------------------------------
+
+<:_tmpl>
+{
+  "%": "",
+  ".": [],
+  ":": [],
+  "!": [],
+  "~": [],
+  "?": [],
+  "#": "#"
+}
+</:_tmpl>
+
+------------------------------------------------------------------------------->
+
+
+
+</script><script type='text/markdown' data-name='_tmpl:pres'>
+
+class: center, middle
+
+# Title
+
+---
+
+# Agenda
+
+1. Introduction
+2. Deep-dive
+3. ...
+
+---
+
+# Introduction
+  
+</script><script type='text/markdown' data-name='try0:index'>
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+<!------------------------------------------------------------------------------
+
+<:try0>
+{
+  "%": "",
+  ".": [],
+  ":": [],
+  "!": [],
+  "~": [],
+  "?": [],
+  "#": "#"
+}
+</:try0>
+
+------------------------------------------------------------------------------->
+
+
+
+</script><script type='text/markdown' data-name='try0:pres'>
+
+class: center, middle
+
+# Title
+
+---
+
+# Agenda
+
+1. Introduction
+2. Deep-dive
+3. ...
+
+---
+
+# Introduction
+  
+</script><script type='text/markdown' data-name='tmpl'>
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+</script><script>
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+__$ = async function({ ...vars }={}) {
+  // ..
+  const { query } = vars;
+  const _  = __$['#_']();
+  const $$ = `try0`; // ..
+  const _$ = _.filter($ => $['name'].includes(`${$$}:`)); // ..
+
+  await __script('https://remarkjs.com/downloads/remark-latest.min.js');
+
+  document.getElementById('app').innerHTML = [
+    `<textarea id='source'>`,
+    ..._$.map($ => $['text']),
+    `</textarea>`,
+  ].join('\n');
+
+  const slideshow = remark.create();
+  // ..
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
+__$['#_'] = function() {
+  const _ = [ ...document.querySelectorAll(`script[data-name]`)]
+    .map($ => ({
+      name: $.getAttribute('data-name'),
+      text: $.innerHTML,
+    }))
+    .filter($ => $['name'].includes(':') && !$['name'].includes('index'))
+
+  return _;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
+async function __style(href) {
+  return await new Promise((resolve, reject) => {
+    const style = document.createElement('link');
+
+    style.href    = href;
+    style.rel     = 'stylesheet';
+    style.onload  = resolve;
+    style.onerror = reject;
+    
+    document.getElementsByTagName('head')[0].appendChild(style);
+  });
+};
+
+async function __script(src) {
+  return await new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+
+    script.src     = src;
+    script.onload  = resolve;
+    script.onerror = reject;
+    
+    document.getElementsByTagName('body')[0].appendChild(script);
+  });
+};
+
+function __query() {
+  for ([key, val] of new URLSearchParams(window.location.search).entries()) {
+    __query[key] = val || true; // ..
+  }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
+__$$d  = (...params) => { params.map(el => console.log(el)); process.exit(); };
+__$$dd = (...params) => { console.log.apply({}, params); process.exit(); };
+__$$c  = (...params) => { params.map(el => console.log(el)); };
+__$$cc = (...params) => { console.log.apply({}, params); };
+
+////////////////////////////////////////////////////////////////////////////////
+
+window.addEventListener('DOMContentLoaded', async () => {
+  __query();
+
+  const query = Object.keys(__query).reduce((a, c) => ({ ...a, [c]: __query[c] }), { });
+
+  await __$({ query });
+});
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+</script><style>
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body {
+  font-family: 'Droid Serif';
+}
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.remark-slide-content h1 { font-size: 3em; }
+.remark-slide-content h2 { font-size: 2em; }
+.remark-slide-content h3 { font-size: 1.6em; }
+.footnote {
+  position: absolute;
+  bottom: 3em;
+}
+li p { line-height: 1.25em; }
+.red { color: #fa0000; }
+.large { font-size: 2em; }
+a, a > code {
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
+code {
+  background: #e7e8e2;
+  border-radius: 5px;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.remark-code-line-highlighted     { background-color: #373832; }
+.pull-left {
+  float: left;
+  width: 47%;
+}
+.pull-right {
+  float: right;
+  width: 47%;
+}
+.pull-right ~ p {
+  clear: both;
+}
+#slideshow .slide .content code {
+  font-size: 0.8em;
+}
+#slideshow .slide .content pre code {
+  font-size: 0.9em;
+  padding: 15px;
+}
+.inverse {
+  background: #272822;
+  color: #777872;
+  text-shadow: 0 0 20px #333;
+}
+.inverse h1, .inverse h2 {
+  color: #f3f3f3;
+  line-height: 0.8em;
+}
+
+/* Slide-specific styling */
+#slide-inverse .footnote {
+  bottom: 12px;
+  left: 20px;
+}
+#slide-how .slides {
+  font-size: 0.9em;
+  position: absolute;
+  top:  151px;
+  right: 140px;
+}
+#slide-how .slides h3 {
+  margin-top: 0.2em;
+}
+#slide-how .slides .first, #slide-how .slides .second {
+  padding: 1px 20px;
+  height: 90px;
+  width: 120px;
+  -moz-box-shadow: 0 0 10px #777;
+  -webkit-box-shadow: 0 0 10px #777;
+  box-shadow: 0 0 10px #777;
+}
+#slide-how .slides .first {
+  background: #fff;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 1;
+}
+#slide-how .slides .second {
+  position: relative;
+  background: #fff;
+  z-index: 0;
+}
+
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+  .left-column h2:last-of-type, .left-column h3:last-child {
+    color: #000;
+  }
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+</style><script>
+</script><meta charset='utf-8'></head><body><div id='app'></div></body></html>
