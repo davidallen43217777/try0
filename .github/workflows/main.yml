@@ -1,7 +1,7 @@
 name: Main
 on: [push]
 jobs:
-  Example:
+  Main:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
