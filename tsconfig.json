@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "noEmit": true
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"]
+}
