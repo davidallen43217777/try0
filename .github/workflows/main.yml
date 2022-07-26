@@ -1,9 +1,18 @@
 name: Main
 on: [push]
 jobs:
-  Example:
+  Main:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "Express!"
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Test
+        run: npm run test
+      - name: Echo
+        run: echo "Express!"
