@@ -1,0 +1,9 @@
+name: Main
+on: [push]
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "Express!"
