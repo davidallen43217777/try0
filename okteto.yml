@@ -3,7 +3,7 @@ build:
     image: okteto.dev/node:0.0.1
     context: .
     args:
-      - PORT: ${PORT:3000}
+      PORT: ${PORT}
 deploy:
   - kubectl apply -f okteto-k8s.yml
 dev:
