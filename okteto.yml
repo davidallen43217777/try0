@@ -1,0 +1,13 @@
+build:
+  att:
+    image: okteto.dev/node:0.0.1
+    context: .
+deploy:
+  - kubectl apply -f okteto-k8s.yml
+dev:
+  att:
+    command: bash
+    sync:
+      - .:/usr/src/app
+    forward:
+      - 9229:9229

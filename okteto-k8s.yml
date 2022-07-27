@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: att
+spec:
+  selector:
+    matchLabels:
+      app: att
+  template:
+    metadata:
+      labels:
+        app: att
+    spec:
+      containers:
+      - image: okteto.dev/node:0.0.1
+        name: att
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: att
+spec:
+  type: ClusterIP
+  ports:
+  - name: "att"
+    port: 3000
+  selector:
+    app: att
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: att
+  annotations:
+    dev.okteto.com/generate-host: att
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              service:
+                name: att
+                port:
+                  number: 3000
+            path: /
+            pathType: ImplementationSpecific
