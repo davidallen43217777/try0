@@ -2,7 +2,7 @@
 on:
   push:
     branches:
-      - custom/egos6358/main
+      - custom/egos6358/main1234
 
 name: example
 
