@@ -1,6 +1,6 @@
 build:
   att:
-    image: okteto.dev/node:0.0.4
+    image: okteto.dev/node:0.0.5
     context: .
     args:
       PORT: ${PORT}
@@ -14,3 +14,11 @@ dev:
       - .:/usr/src/app
     forward:
       - 9229:9229
+dependencies:
+  att:
+    #repository: https://github.com/okteto/movies-frontend
+    #manifest: okteto.yml
+    #branch: main
+    variables:
+      OJABESA: THEBEST
+    #wait: true
