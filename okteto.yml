@@ -1,6 +1,6 @@
 build:
   att:
-    image: okteto.dev/node:0.0.2
+    image: okteto.dev/node:0.0.3
     context: .
     args:
       PORT: ${PORT}
