@@ -24,4 +24,4 @@ jobs:
         name: ${{ secrets.OKTETO_NAME }}
         namespace: ${{ secrets.OKTETO_NAMESPACE }}
         timeout: 8m
-        variables: "OJVAR=HAHA1239"
+        #variables: "OJVAR=HAHA1239"

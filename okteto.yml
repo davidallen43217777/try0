@@ -1,12 +1,11 @@
 build:
   att:
-    image: okteto.dev/node:0.0.6b
+    image: okteto.dev/node:0.0.6c
     context: .
-    args:
-      PORT: ${PORT}
-      TRYVAROJ: ${OJVAR}
+    #args:
+    #  PORT: ${PORT}
+    #  TRYVAROJ: ${OJVAR}
 deploy:
-  - echo $PORT > .env
   - kubectl apply -f okteto-k8s.yml
 dev:
   att:
@@ -15,3 +14,11 @@ dev:
       - .:/usr/src/app
     forward:
       - 9229:9229
+dependencies:
+  att:
+    repository: https://github.com/davidallen43217777/try0
+    manifest: okteto.yml
+    branch: custom/egos6358/main
+    variables:
+      OJVAR: ${PORT}
+    wait: true
