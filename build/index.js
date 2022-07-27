@@ -15,10 +15,10 @@ _dotenv["default"].config();
 
 var app = (0, _express["default"])();
 exports.app = app;
-var port = process.env.PORT || 3000;
+var port = process.env.PORT;
 exports.port = port;
 app.get('/', function (req, res) {
-  res.send('Express + TypeScript Server');
+  res.send('OJ 1234');
 });
 app.listen(port, function () {
   console.log("[server]: Server is running at http://localhost:".concat(port));

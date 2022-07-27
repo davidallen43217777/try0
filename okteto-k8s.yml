@@ -12,7 +12,7 @@ spec:
         app: att
     spec:
       containers:
-      - image: okteto.dev/node:0.0.1
+      - image: okteto.dev/node:0.0.2
         name: att
 
 ---
