@@ -1,6 +1,6 @@
 build:
   att:
-    image: okteto.dev/node:0.0.6c
+    image: okteto.dev/node:0.0.6d
     context: .
     #args:
     #  PORT: ${PORT}
@@ -14,11 +14,3 @@ dev:
       - .:/usr/src/app
     forward:
       - 9229:9229
-dependencies:
-  att:
-    repository: https://github.com/davidallen43217777/try0
-    manifest: okteto.yml
-    branch: custom/egos6358/main
-    variables:
-      OJVAR: ${PORT}
-    wait: true
