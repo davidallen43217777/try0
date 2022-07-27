@@ -2,12 +2,6 @@ build:
   att:
     image: okteto.dev/node:0.0.6
     context: .
-    args:
-      PORT: ${PORT}
-      TRYVAROJ: ${PORT}
-    environment:
-      - name=$USER
-      - TRYVAROJ=haha1234
 deploy:
   - echo $PORT > .env
   - kubectl apply -f okteto-k8s.yml
