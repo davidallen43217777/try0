@@ -1,0 +1,26 @@
+
+on:
+  push:
+    branches:
+      - custom/egos6358/main
+
+name: example
+
+jobs:
+  egos6358:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: checkout
+      uses: actions/checkout@master
+    
+    - uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: "Trigger the pipeline"
+      uses: okteto/pipeline@latest
+      with:
+        name: ${{ secrets.OKTETO_NAME }}
+        namespace: ${{ secrets.OKTETO_NAMESPACE }}
+        timeout: 8m
