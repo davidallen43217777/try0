@@ -1,9 +1,10 @@
 build:
   att:
-    image: okteto.dev/node:0.0.3
+    image: okteto.dev/node:0.0.4
     context: .
-    #args:
-    #  PORT: ${PORT}
+    args:
+      PORT: ${PORT}
+      TRYVAROJ: ${PORT}
 deploy:
   - kubectl apply -f okteto-k8s.yml
 dev:
