@@ -1,6 +1,6 @@
 FROM node:16-slim
 WORKDIR /mnt
-COPY build ./
+COPY build ./build
 COPY package.json .
 COPY package-lock.json .
 RUN npm i
