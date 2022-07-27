@@ -15,7 +15,7 @@ _dotenv["default"].config();
 
 var app = (0, _express["default"])();
 exports.app = app;
-var port = process.env.PORT;
+var port = process.env.PORT || 3000;
 exports.port = port;
 app.get('/', function (req, res) {
   res.send('OJ 1234');
