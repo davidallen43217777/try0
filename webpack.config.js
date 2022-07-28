@@ -98,7 +98,7 @@ config.app = (env={}, argv) => ({
 config.default = (env={}, argv) => ({
   mode: 'development',
   entry: [
-    `./src/index.js`,
+    `./src/index.ts`,
   ],
   resolve: {
     extensions: ['.js', '.ts', '.vue'],

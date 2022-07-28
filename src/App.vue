@@ -1,8 +1,8 @@
-<script>
+<script setup lang='ts'>
 export default {
   data() {
     return {
-      greeting: "Hello, World!",
+      greeting: "Hi123",
     };
   },
 };
