@@ -1,8 +1,9 @@
-<script setup lang='ts'>
+<script>
+//  lang='ts' no work
 export default {
   data() {
     return {
-      greeting: "Hi123",
+      greeting: "Hello, World!",
     };
   },
 };

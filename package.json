@@ -4,7 +4,7 @@
     "vendor": "webpack --env config=vendor",
     "build": "webpack",
     "test": "jest",
-    "typecheck": "tsc"
+    "typecheck": "vue-tsc"
   },
   "dependencies": {
     "vue": "^3.2.37"
@@ -21,6 +21,7 @@
     "@vue/compiler-sfc": "^3.2.37",
     "@vue/vue3-jest": "^28.0.1",
     "babel-loader": "^8.2.5",
+    "babel-preset-typescript-vue": "^1.1.1",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.3",

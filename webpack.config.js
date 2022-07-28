@@ -18,7 +18,11 @@ const { VueLoaderPlugin }  = require('vue-loader');
 
 const babel_loader = {
   test: /\.(ts|tsx)$/,
-  exclude: /node_modules/,
+  //exclude: /node_modules/,
+  exclude: file => (
+    /node_modules/.test(file) &&
+    !/\.vue\.js/.test(file)
+  ),
   use: [
     {
       loader: 'babel-loader',
